@@ -1,0 +1,744 @@
+#ifndef HOMEWORK
+#define HOMEWORK
+#include <iostream>
+#include <math.h>
+#include <algorithm>
+using namespace std;
+
+class homework
+{
+public:
+	void printhomework(int);
+
+private:
+	void countevens1();
+	void question2();
+	void question3();
+	void question4();
+	void question5();
+	void question6();
+	void question7();
+	void question8();
+	void question9();
+	void question10();
+	void question11();
+	void question12();
+	void question13();
+	void question14();
+	void question15();
+	void question16();
+	void question17();
+	void question18();
+	void question19();
+	void question20();
+	void question21();
+	void question22();
+	void question23();
+	void question24();
+	void question25();
+	void question26();
+	void question27();
+	void question28();
+	void question29();
+	void question30();
+};
+
+void homework::printhomework(int i) {
+	switch (i)
+	{
+	case 1:
+		countevens1();
+		break;
+	case 2:
+		question2();
+		break;
+	case 3:
+		question3();
+		break;
+	case 4:
+		question4();
+		break;
+
+	case 5:
+		question5();
+		break;
+	case 6:
+		question6();
+		break;
+	case 7:
+		question7();
+		break;
+	case 8:
+		question8();
+		break;
+	case 10:
+		question10();
+		break;
+
+	case 11:
+		question11();
+		break;
+	case 12:
+		question12();
+		break;
+	case 13:
+		question13();
+		break;
+	case 14:
+		question14();
+		break;
+	case 15:
+		question15();
+		break;
+	case 16:
+		question16();
+		break;
+	case 17:
+		question17();
+		break;
+	case 18:
+		question18();
+		break;
+	case 19:
+		question19();
+		break;
+	case 20:
+		question20();
+		break;
+	case 21:
+		question21();
+		break;
+	case 22:
+		question22();
+		break;
+	case 23:
+		question23();
+		break;
+	case 24:
+		question24();
+		break;
+	case 25:
+		question25();
+		break;
+	case 26:
+		question26();
+		break;
+	case 27:
+		question27();
+		break;
+	case 28:
+		question28();
+		break;
+	case 29:
+		question29();
+		break;
+	case 30:
+		question30();
+		break;
+		
+	default:
+		break;
+	}
+
+
+}
+
+void homework::countevens1() {
+	int arr[14]{};
+	int countofevens = 0;
+	for (int i = 0; i < 14; ++i) {
+		//instert 1-99
+		arr[i] = rand() % 100 + 1;
+	}
+
+	for (int i = 0; i < 14; ++i) {
+		if (arr[i] % 2 == 0) {
+			++countofevens;
+		}
+	}
+	cout << countofevens;
+}
+
+void homework::question2() {
+	int arr1[12]{};
+	int arr2[12]{};
+	int countofevens = 0;
+	//size arr1
+	int size;
+	// integer sum is a sum of elements arr1
+	int sum = 0;
+	for (int i = 0; i < 12; ++i) {
+		//instert 1-99
+		arr1[i] = rand() % 100 + 1;
+	}
+	for (int i = 0; i < 12; ++i) {
+		//instert 100-999
+		arr2[i] = rand() % 1000+100;
+	}
+
+	for ( size = 0; size < 12; ++size) {
+		sum += arr1[size];
+	}
+	//sum is a median of the element sum
+	sum /= size;
+	arr2[5] = sum;
+}
+
+void homework::question3() {
+	int arr[11]{};
+	int sum=0;
+	int size;
+	int countbigs = 0;
+	for (size = 0; size < 11; ++size) {
+		//instert 1-99
+		arr[size] = rand() % 100 + 1;
+		sum += arr[size];
+	}
+	sum /= size;
+	for (size = 0; size < 11; ++size) {
+		if (arr[size] > sum) ++countbigs;
+	}
+
+	cout << countbigs;
+}
+
+void homework::question4() {
+	int arr[10]{};
+	int max = arr[0];
+	for (int i = 0; i < 10; ++i) {
+		//instert 1-99
+		arr[i] = rand() % 100 + 1;
+	}
+	for (int i = 0; i < 12; ++i) {
+		if (max < arr[i]) max = arr[i];
+	}
+	arr[0] = max;
+}
+
+void homework::question5() {
+	int arr[9]{};
+	int max = arr[0];
+	int min = arr[0];
+	int indxmin;
+	int indxmax;
+	for (int i = 0; i < 9; ++i) {
+		//instert 1-99
+		arr[i] = rand() % 100 + 1;
+	}
+
+	for (int i = 0; i < 10; ++i) {
+		if (max < arr[i]) {
+			max = arr[i];
+			indxmax = i;
+		}
+		if (min > arr[i]) {
+			min = arr[i];
+			indxmin = i;
+		}
+
+	}
+
+	arr[indxmax] = min;
+	arr[indxmin] = max;
+
+
+}
+
+void homework::question6() {
+	int arr[20]{};
+	int countevens=0, countnotevens = 0;
+	for (int i = 0; i < 9; ++i) {
+		//instert 1-99
+		arr[i] = rand() % 100 + 1;
+	}
+
+	for (int i = 0; i < 9; ++i) {
+		if (arr[i] % 2 == 0) {
+			++countevens;
+		}
+		else {
+			++countnotevens;
+		}
+	}
+	if (countevens > countnotevens) {
+		cout << "evense";
+	}
+	else if (countevens > countnotevens) {
+		cout << "=";
+	}
+	else cout << "noteevense";
+
+
+}
+
+
+void homework::question7() {
+	double arr[15]{};
+	//integer count count elements wich big firts element
+	int count = 0;
+	//insert arr
+	for (int i = 0; i < 15; ++i) {
+		arr[i] = (double)rand();
+	}
+
+
+	for (int i = 1; i < 15; ++i) {
+		if (arr[i] > arr[0]) ++count;
+
+	}
+
+	cout << count;
+
+
+}
+
+void homework::question8() {
+	double arr[16]{};
+	//integer count count elements wich big firts element
+	int count = 0;
+	int max = arr[0];
+	int min = arr[0];
+	int maxindex, minindex;
+	//insert arr
+	for (int i = 0; i < 16; ++i) {
+		arr[i] = (double)(rand() % 10000 - 5000) / 100;
+	}
+
+	for (int i = 0; i < 10; ++i) {
+		if (max < arr[i]) {
+			max = arr[i];
+			maxindex = i;
+		}
+		if (min > arr[i]) {
+			min = arr[i];
+			minindex = i;
+		}
+
+	}
+
+	cout << "maxindex:" << maxindex << endl << "minindex:" << minindex;
+}
+
+
+void homework::question10() {
+	int arr[17]{};
+	int mid = 0;
+	int size, sum = 0;
+	for (size = 0; size < 17; ++size) {
+		//instert 1-99
+		arr[size] = rand() % 100 + 1;
+		mid+= arr[size];
+	}
+	mid /= size;
+	mid = abs(mid);
+	for (int i = 0; i < 17; ++i) {
+		if (abs(arr[i]) > mid) {
+			sum += arr[i];
+		}
+	}
+
+	cout << sum;
+
+
+}
+
+void homework::question11() {
+	int arr[14]{};
+	int countevense = 0;
+	int sumevense = 0;
+	for (int i = 0; i < 14; ++i) {
+		arr[i] = rand() % 100 + 1;
+	}
+
+	for (int i = 0; i < 14; ++i) {
+		if (arr[i] > 0 && arr[i] % 2 == 0) {
+			++countevense;
+			sumevense += arr[i];
+		}
+	}
+
+	cout << "sumevense:" << sumevense << endl << "count evense: " << countevense;
+
+}
+
+
+
+void homework::question12() {
+	double arr[12]{};
+	int min, max,sum;
+	for (int i = 0; i < 12; ++i) {
+		arr[i] = (double)(rand() % 10000 - 5000) / 100;
+	}
+	std::sort(std::begin(arr), std::end(arr), std::greater<>());
+
+	for (int i = 0; i < 12; ++i) {
+		if (max < arr[i]) {
+			max = arr[i];
+			
+		}
+		if (min > arr[i]) {
+			min = arr[i];
+			
+		}
+
+	}
+	sum = max + min;
+	cout << "sum maximum and minimum elements:" << sum;
+}
+
+
+void homework::question13() {
+	int arr[15]{};
+	int max, min;
+	int sum, diference;
+	for (int i = 0; i < 15; ++i) {
+		arr[i] = rand()%100+1;
+	}
+
+	for (int i = 0; i < 15; ++i) {
+		if (max < arr[i]) {
+			max = arr[i];
+
+		}
+		if (min > arr[i]) {
+			min = arr[i];
+
+		}
+
+	}
+	sum = min + max;
+	diference = max - min;
+	cout << "sum maximum and minimum elements:" << sum << endl << "diference maximum and minimum elements:" << diference;
+}
+
+
+void homework::question14() {
+	int arr[17]{};
+	int sumnotevens;
+	for (int i = 0; i < 17; ++i) {
+		arr[i] = rand() % 100 + 1;
+		if (arr[i] % 2 != 0) {
+			sumnotevens +=arr[i];
+		}
+	}
+
+	for (int i = 0; i < 17; ++i) {
+		if (arr[i] % 3 == 0) {
+			arr[i] = sumnotevens;
+		}
+	}
+
+}
+
+
+void homework::question15() {
+	double arr[14]{};
+	for (int i = 0; i < 14; ++i) {
+		arr[i] = (double)(rand() % 10000 - 5000) / 100;
+		cout << arr[i] << "  ";
+	}
+	cout << endl;
+	bubbleSortbig(arr, 0, 7);
+	bubbleSortmin(arr, 8, 13);
+	for (int i = 0; i < 14; ++i) {
+		cout << arr[i] << "  ";
+	}
+	
+	
+}
+
+
+void bubbleSortbig(double arr[], int low,int high)
+{
+	int i, j;
+	for (i = low; i < high- 1; i++) {
+		for (j = low; j < high - i - 1; j++) {
+			if (arr[j] > arr[j + 1])
+				swap(arr[j], arr[j + 1]);
+		}
+	}
+}
+
+void bubbleSortmin(double arr[], int low,int high)
+{
+	int i, j;
+	for (i = low; i < high - 1; i++) {
+		for (j = low; j < high - i - 1; j++) {
+			if (arr[j] < arr[j + 1])
+				swap(arr[j], arr[j + 1]);
+		}
+	}
+}
+
+
+void homework::question16() {
+	double arr[12]{};
+	double max = arr[0];
+	double min = arr[0];
+	int minindex, maxindex;
+	for (int i = 0; i < 12; ++i) {
+		arr[i] = (double)(rand() % 10000 - 5000) / 100;
+	
+	}
+	for (int i = 0; i < 12; ++i) {
+		if (max < arr[i]) {
+			max = arr[i];
+			maxindex = i;
+		}
+		if (min > arr[i]) {
+			min = arr[i];
+			minindex = i;
+		}
+
+	}
+	cout << abs(maxindex - minindex);
+}
+
+
+void homework::question17() {
+	int arr[15]{};
+	int countminus = 0,countzero=0;
+	int sumplus = 0;
+	for (int i = 0; i < 15; ++i) {
+		arr[i] = rand() % 100 - 100;
+	}
+
+	for (int i = 0; i < 15; ++i) {
+		if (arr[i] > 0) {
+			sumplus *= arr[i];
+		}
+		else if (arr[i] < 0) {
+			++countminus;
+		}
+		else ++countzero;
+	}
+
+	cout << "* elements>0: " << sumplus << "count elements <0:" << countminus << "count elements =0:" << countzero;
+}
+
+//?????
+//void homework::question18() {
+//
+//}
+void homework::question19() {
+	int arr[19]{};
+	int sum,j;
+	bool t = false;
+	for (int i = 0; i < 19; ++i) {
+		arr[i] = rand() % 100 - 100;
+	}
+	for ( j = 0; j < 19; ++j) {
+		if (arr[j] >= 0) {
+			sum += arr[j];
+		}
+		else {
+			break;
+		}
+		
+		
+	}
+	if (j == 19) {
+		cout << "not element that <0";
+	}
+	else {
+		cout << "sum elements " << sum;
+	}
+
+	
+}
+
+void homework::question20() {
+	int arr[16]{};
+	int countchange=0;
+	for (int i = 0; i < 16; ++i) {
+		arr[i] = rand() % 100 +1;
+	}
+	for (int i = 0; i < 16; ++i) {
+		if (arr[i] % 3 == 0) {
+			arr[i] = 0;
+			++countchange;
+		}
+	}
+
+	cout << "count of changed %3=0 to 0:" << countchange;
+}
+
+void homework::question21() {
+	double arr[12]{};
+	double min = arr[0];
+	int minindex;
+	for (int i = 0; i < 12; ++i) {
+		arr[i] = (double)(rand() % 10000 - 5000) / 100;
+
+	}
+	for (int i = 0; i < 12; ++i) {
+		if (min > arr[i]) {
+			min = arr[i];
+			minindex = i;
+		}
+
+	}
+	arr[minindex] *= 3;
+	swap(arr[minindex], arr[11]);
+}
+
+
+void homework::question22() {
+	double arr[15]{};
+	int n = 0, m = 14;
+	for (int i = 0; i < 15; ++i) {
+		arr[i] = (double)(rand() % 10000 - 5000) / 100;
+
+	}
+	while (n != 7) {
+		swap(arr[n], arr[m]);
+		++n;
+		--m;
+	}
+
+}
+
+void homework::question23() {
+	int arr[14]{};
+	int sumevensfromindex=0, productnotevens=1;
+	for (int i = 0; i < 14; ++i) {
+		arr[i] = rand() % 100 + 1;
+	}
+	for (int i = 0; i < 14; ++i) {
+		if (arr[i] % 2 != 0) {
+			productnotevens *= arr[i];
+		}
+		if (i % 2 == 0) {
+			sumevensfromindex += arr[i];
+		}
+	}
+	cout << "sum evens index elements:" << sumevensfromindex << "product not evens elements:" << productnotevens;
+}
+
+void homework::question24() {
+	double arr[12]{};
+	double lastelem = arr[11];
+	double sum = 0;
+	for (int i = 0; i < 12; ++i) {
+		arr[i] = (double)(rand() % 10000 - 5000) / 100;
+	}
+	for (int i = 0; i < 11; ++i) {
+		if (arr[i] < lastelem) {
+			sum += arr[i];
+		}
+	}
+	cout << "sum elements<last element::" << sum;
+}
+
+void homework::question25() {
+	int arr1[15]{};
+	int arr2[15]{};
+	int sum = 0;
+	for (int i = 0; i < 15; ++i) {
+		arr1[i] = rand() % 100 - 100;
+	}
+	for (int i = 0; i < 15; ++i) {
+		if (arr1[i] > 0) {
+			sum += arr1[i];
+		}
+	}
+	for (int i = 0; i < 15; ++i) {
+		arr2[i] = arr1[i] - sum;
+	}
+
+}
+
+
+void homework::question26() {
+	double arr[15]{};
+	double productplus = 1;
+	double productminus = 1;
+	for (int i = 0; i < 15; ++i) {
+		arr[i] = (double)(rand() % 10000 - 5000) / 100;
+	}
+
+	for (int i = 0; i < 15; ++i) {
+		if (arr[i] > 0) {
+			productplus *= arr[i];
+		}
+		else if (arr[i] < 0) {
+			productminus *= abs(arr[i]);
+		}
+	}
+	cout << "diferent product elements <0 and elements >0::" <<abs( productplus - productminus);
+
+
+
+}
+
+void homework::question27() {
+	int arr[19]{};
+	int max = arr[0];
+	for (int i = 0; i < 19; ++i) {
+		arr[i] = rand() % 100 +1;
+	}
+
+	for (int i = 0; i < 19; ++i) {
+		if (arr[i] > max) max = arr[i];
+	}
+	for (int i = 0; i < 19; ++i) {
+		if (arr[i] % 2 == 0) arr[i] = max;
+	}
+}
+
+void homework::question28() {
+	int arr[17]{};
+	int sum = 0;
+	int count = 0, sumbig = 0;
+	for (int i = 0; i < 17; ++i) {
+		arr[i] = rand() % 100 - 100;
+		sum += arr[i];
+	}
+	sum /= 17;
+	for (int i = 0; i < 17; ++i) {
+		if (abs(arr[i]) > sum) {
+			sumbig += arr[i];
+			++count;
+		}
+	}
+	cout << "sum of the elements that bigest med sum arr::" << sumbig << endl << "count this elements::" << count;
+}
+
+void homework::question29() {
+	double arr[18]{};
+	double productbig = 1;
+	double sum;
+	for (int i = 0; i < 18; ++i) {
+		arr[i] = (double)(rand() % 10000 - 5000) / 100;
+	}
+	for (int i = 0; i < 18; ++i) {
+		if (arr[i] > 0) {
+			productbig *= arr[i];
+		}
+		else {
+			sum += abs(arr[i]);
+		}
+	}
+	cout << "quotient of division :" << (productbig / sum);
+
+}
+
+void homework::question30() {
+	double arr[12]{};
+	double min = arr[0];
+	int minindex;
+	for (int i = 0; i < 12; ++i) {
+		arr[i] = (double)(rand() % 10000 - 5000) / 100;
+	}
+	for (int i = 1; i < 18; ++i) {
+		if (arr[i] < min) {
+			min = arr[i];
+			minindex = i;
+		}
+	}
+	cout << "sum minimum value element and  index:" << (min + minindex);
+}
+
+
+
+#endif // !HOMEWORK
